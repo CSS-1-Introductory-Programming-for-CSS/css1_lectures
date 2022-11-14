@@ -14669,6 +14669,22 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Goals-of-this-lecture">Goals of this lecture<a class="anchor-link" href="#Goals-of-this-lecture">&#182;</a></h2><ul>
+<li>Brief dictionary review.  </li>
+<li>Nested dictionaries.  </li>
+<li>Optional dictionary practice problems.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Review:-dictionaries">Review: dictionaries<a class="anchor-link" href="#Review:-dictionaries">&#182;</a></h2><blockquote><p>In Python, a <strong>dictionary</strong>, or <code>dict</code>, is a mutable collection of items, which stores <strong>key/value</strong> pairings.</p>
 </blockquote>
 
@@ -14727,379 +14743,6 @@ Assistant Teaching Professor
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Goals-of-this-lecture">Goals of this lecture<a class="anchor-link" href="#Goals-of-this-lecture">&#182;</a></h2><p>Last time, we covered:</p>
-<ul>
-<li>How to create a dictionary.  </li>
-<li>Basic operations, e.g., indexing and looping through a dictionary.</li>
-</ul>
-<p>Today, we'll cover more <strong>use cases</strong>:</p>
-<ul>
-<li>Using <strong>dictionary comprehensions</strong>.</li>
-<li><strong>Nested dictionaries</strong>.</li>
-<li>More practice problems with dictionaries.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Using-a-dictionary-comprehension">Using a dictionary comprehension<a class="anchor-link" href="#Using-a-dictionary-comprehension">&#182;</a></h2><p>Recall that a <strong>list comprehension</strong> is:</p>
-<blockquote><p>... a shorter, more efficient way to loop through a <code>list</code> (and possibly apply some function to each element of a list).</p>
-</blockquote>
-<p>Similarly, a <strong>dictionary comprehension</strong> can be used to:</p>
-<blockquote><p>... quickly create a <code>dict</code> from a set of potential keys and values.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Creates dictionary mapping each key onto key * 2</span>
-<span class="n">example_dc</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">example_dc</span><span class="p">)</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Why-is-a-dictionary-comprehension-useful?">Why is a dictionary comprehension useful?<a class="anchor-link" href="#Why-is-a-dictionary-comprehension-useful?">&#182;</a></h3><p>In theory, we could also use a normal <code>for</code> loop to accomplish the same goal.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">example_for</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="n">example_for</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">example_for</span><span class="p">)</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>But a <code>dict</code> comprehension can be written on a single line, and <em>can</em> be clearer than a <code>for</code> loop.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">example_dc</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">example_dc</span><span class="p">)</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Use-case:-bundling-tuples-together">Use case: bundling <code>tuple</code>s together<a class="anchor-link" href="#Use-case:-bundling-tuples-together">&#182;</a></h3><p>A dictionary comprehension is a useful way of <strong>bundling together</strong> a list of <code>tuple</code> pairs.</p>
-<p>Code explanation:</p>
-<ul>
-<li>For each element of each <code>tuple</code> pair...</li>
-<li>Store the first element as the <code>key</code>, and the second element as the <code>value</code>. </li>
-</ul>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">course_tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'Trott'</span><span class="p">,</span> <span class="s1">'CSS 1'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'Ellis'</span><span class="p">,</span> <span class="s1">'COGS 18'</span><span class="p">)]</span>
-<span class="n">course_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">course_tuples</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">course_dict</span><span class="p">)</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Trott&#39;: &#39;CSS 1&#39;, &#39;Ellis&#39;: &#39;COGS 18&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Check-in">Check-in<a class="anchor-link" href="#Check-in">&#182;</a></h3><p>Use a <strong>dictionary comprehension</strong> to convert this <code>list</code> of <code>tuple</code> pairs into a <code>dict</code>.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit_tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'banana'</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">'apple'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">'orange'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="c1">### Your code here</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Check-in">Check-in<a class="anchor-link" href="#Check-in">&#182;</a></h3><p>The code below has two lists of equal length. Use a dictionary comprehension to combine them into a dictionary, where each element in <code>fruits</code> should be the <strong>key</strong>, mapping onto each element at the same position in <code>amounts</code>.</p>
-<p><strong>Note</strong>: This problem is a little harder! As a hint, think about how you could <strong>iterate</strong> through each item in each list using an index.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
-<span class="n">amounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="c1">### Your code here</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Possible-solution">Possible solution<a class="anchor-link" href="#Possible-solution">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
-<span class="n">amounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">fruits_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">fruits</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="n">amounts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">))}</span>
-<span class="n">fruits_dict</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;banana&#39;: 5, &#39;apple&#39;: 2, &#39;orange&#39;: 3}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Nested-dictionaries">Nested dictionaries<a class="anchor-link" href="#Nested-dictionaries">&#182;</a></h2><blockquote><p>A <strong>nested dictionary</strong> is a dictionary contained inside another dictionary, i.e., as a <strong>value</strong>.</p>
 </blockquote>
 <p>In principle, there is no limit on how many nested dictionaries can be contained in a <code>dict</code> (besides memory capacity on one's computer).</p>
@@ -15113,7 +14756,6 @@ Assistant Teaching Professor
 <li><code>username</code>.</li>
 <li><code>Name</code>.  </li>
 <li><code>Courses</code> (a <code>list</code>). </li>
-<li><code>Email</code>. </li>
 <li><code>Department</code></li>
 <li><code>Title</code>. </li>
 </ul>
@@ -15133,7 +14775,6 @@ Assistant Teaching Professor
 <li><code>username</code> (e.g., <code>sttrott</code>)</li>
 <li><code>Name</code> (e.g., <code>Sean Trott</code>)</li>
 <li><code>Courses</code> (e.g., <code>['COGS 14A', ...]</code>)</li>
-<li><code>Email</code> (e.g., <code>@ucsd...</code>)</li>
 <li><code>Department</code> (e.g., <code>COGS</code>)</li>
 <li><code>Title</code> (e.g., <code>Assistant Teaching Professor</code>)</li>
 </ul>
@@ -15162,7 +14803,7 @@ Assistant Teaching Professor
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="p">{</span>
@@ -15195,13 +14836,65 @@ Assistant Teaching Professor
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Outline:</p>
-<ul>
-<li>Dictionary comprehension. </li>
-<li>Nested dictionaries.  </li>
-<li>Sorting a dictionary.</li>
-</ul>
-<p><a href="https://ucsd-css-001.github.io/lectures/P04-dictionaries.html">https://ucsd-css-001.github.io/lectures/P04-dictionaries.html</a></p>
+<h3 id="Indexing-our-nested-dict">Indexing our nested <code>dict</code><a class="anchor-link" href="#Indexing-our-nested-dict">&#182;</a></h3><p>We can index into this <code>dict</code> as we would normally. Note that now, the <strong>value</strong> is itself a <code>dict</code>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors</span><span class="p">[</span><span class="s1">'sellis'</span><span class="p">]</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;Name&#39;: &#39;Shannon Ellis&#39;,
+ &#39;Courses&#39;: [&#39;COGS 18&#39;, &#39;COGS 108&#39;, &#39;COGS 137&#39;],
+ &#39;Title&#39;: &#39;Associate Teaching Professor&#39;,
+ &#39;Department&#39;: &#39;COGS&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Check-in">Check-in<a class="anchor-link" href="#Check-in">&#182;</a></h4><p>How might we index the <code>Title</code> of a particular instructor? I.e., what if we wanted to find out the <code>Title</code> of <code>sttrott</code>?</p>
 
 </div>
 </div>
@@ -15211,10 +14904,10 @@ Assistant Teaching Professor
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Your code here</span>
 </pre></div>
 </body></html>
 
@@ -15222,6 +14915,530 @@ Assistant Teaching Professor
      </div>
 </div>
 </div>
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Nested-indices">Nested indices<a class="anchor-link" href="#Nested-indices">&#182;</a></h4><p>Indexing into a <strong>nested dictionary</strong> follows the same logic––we can <em>chain together</em> index statements to retrieve a particular value.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors</span><span class="p">[</span><span class="s1">'sttrott'</span><span class="p">][</span><span class="s1">'Title'</span><span class="p">]</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;Assistant Teaching Professor&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors</span><span class="p">[</span><span class="s1">'sttrott'</span><span class="p">][</span><span class="s1">'Department'</span><span class="p">]</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;COGS&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Check-in">Check-in<a class="anchor-link" href="#Check-in">&#182;</a></h3><p>How would you retrieve the list of <code>username</code>s (i.e., keys) in this <code>dict</code>?</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">usernames</span> <span class="o">=</span> <span class="n">instructors</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usernames</span><span class="p">)</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>dict_keys([&#39;sttrott&#39;, &#39;sellis&#39;, &#39;wstyler&#39;])
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Practice-problems">Practice problems<a class="anchor-link" href="#Practice-problems">&#182;</a></h2><p>These are <strong>practice problems</strong> that are particularly challenging or advanced. I've included them in case:</p>
+<ul>
+<li>The question occurred to you (i.e., you want to know how to sort by value).  </li>
+<li>You're keen to get some more hands-on practice with Python.</li>
+<li>There's extra time in lecture to review them. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem:-Sorting-a-nested-dictionary">Problem: Sorting a nested dictionary<a class="anchor-link" href="#Problem:-Sorting-a-nested-dictionary">&#182;</a></h3><p>How would you sort a nested dictionary, e.g., <code>instructors</code>, by key?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'sttrott'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'Sean Trott'</span><span class="p">,</span>
+                <span class="s1">'Courses'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'COGS 14A'</span><span class="p">,</span> <span class="s1">'CSS 1'</span><span class="p">,</span> <span class="s1">'CSS 2'</span><span class="p">],</span>
+               <span class="s1">'Title'</span><span class="p">:</span> <span class="s1">'Assistant Teaching Professor'</span><span class="p">,</span>
+               <span class="s1">'Department'</span><span class="p">:</span> <span class="s1">'COGS'</span><span class="p">},</span>
+    <span class="s1">'sellis'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'Shannon Ellis'</span><span class="p">,</span>
+                <span class="s1">'Courses'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'COGS 18'</span><span class="p">,</span> <span class="s1">'COGS 108'</span><span class="p">,</span> <span class="s1">'COGS 137'</span><span class="p">],</span>
+               <span class="s1">'Title'</span><span class="p">:</span> <span class="s1">'Associate Teaching Professor'</span><span class="p">,</span>
+               <span class="s1">'Department'</span><span class="p">:</span> <span class="s1">'COGS'</span><span class="p">},</span>
+    <span class="s1">'wstyler'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'Will Styler'</span><span class="p">,</span>
+                <span class="s1">'Courses'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'LING 6'</span><span class="p">,</span> <span class="s1">'LING 101'</span><span class="p">],</span>
+               <span class="s1">'Title'</span><span class="p">:</span> <span class="s1">'Director of CSS'</span><span class="p">,</span>
+               <span class="s1">'Department'</span><span class="p">:</span> <span class="s1">'LING'</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>The solution ends up being the same as sorting a simpler dictionary.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">instructors_sorted</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">instructors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">instructors</span><span class="p">)}</span>
+<span class="n">instructors_sorted</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;sellis&#39;: {&#39;Name&#39;: &#39;Shannon Ellis&#39;,
+  &#39;Courses&#39;: [&#39;COGS 18&#39;, &#39;COGS 108&#39;, &#39;COGS 137&#39;],
+  &#39;Title&#39;: &#39;Associate Teaching Professor&#39;,
+  &#39;Department&#39;: &#39;COGS&#39;},
+ &#39;sttrott&#39;: {&#39;Name&#39;: &#39;Sean Trott&#39;,
+  &#39;Courses&#39;: [&#39;COGS 14A&#39;, &#39;CSS 1&#39;, &#39;CSS 2&#39;],
+  &#39;Title&#39;: &#39;Assistant Teaching Professor&#39;,
+  &#39;Department&#39;: &#39;COGS&#39;},
+ &#39;wstyler&#39;: {&#39;Name&#39;: &#39;Will Styler&#39;,
+  &#39;Courses&#39;: [&#39;LING 6&#39;, &#39;LING 101&#39;],
+  &#39;Title&#39;: &#39;Director of CSS&#39;,
+  &#39;Department&#39;: &#39;LING&#39;}}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem:-Sorting-by-value">Problem: Sorting by value<a class="anchor-link" href="#Problem:-Sorting-by-value">&#182;</a></h3><p>What if we wanted to sort <code>fruits_dict</code> by <strong>value</strong>––i.e., such that <code>orange</code> should go before <code>banana</code>?</p>
+<p>This ends up being considerably more complicated! We'll rely on:</p>
+<ul>
+<li>The ability to use a custom <strong>sorting mechanism</strong> in <code>sorted</code>.  </li>
+<li>Wrapping a list of <code>tuples</code> in a call to <code>dict</code>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### How can we make sure "banana" goes last?</span>
+<span class="n">fruits_dict</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;banana&#39;: 5, &#39;apple&#39;: 2, &#39;orange&#39;: 3}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Part-1:-sort-items-by-value">Part 1: sort items by value<a class="anchor-link" href="#Part-1:-sort-items-by-value">&#182;</a></h4><p>First, we can sort our list of items.</p>
+<p>By default, calling <code>sorted</code> will sort by the first element in each <code>tuple</code>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## By default, sorts by first element</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">fruits_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[(&#39;apple&#39;, 2), (&#39;banana&#39;, 5), (&#39;orange&#39;, 3)]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>However, we can use a <code>lambda</code> operator (to be discussed more next week), to tell Python we want to instead sort by the <em>second element</em>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Sort instead by second element</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">fruits_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> 
+       <span class="c1">### This retrieves the *second* element in a tuple instead</span>
+       <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[(&#39;apple&#39;, 2), (&#39;orange&#39;, 3), (&#39;banana&#39;, 5)]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Part-2:-sort-items-by-value">Part 2: sort items by value<a class="anchor-link" href="#Part-2:-sort-items-by-value">&#182;</a></h4><p>Now, we can <strong>wrap</strong> that sorted list of items in a call to <code>dict</code>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruits_sorted_value</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="nb">sorted</span><span class="p">(</span><span class="n">fruits_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> 
+           <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fruits_sorted_value</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;apple&#39;: 2, &#39;orange&#39;: 3, &#39;banana&#39;: 5}</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div></section></section>

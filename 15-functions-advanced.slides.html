@@ -14781,7 +14781,7 @@ div.jp-OutputPrompt {
 <li>The goal of a <code>function</code> can't be distilled into a single value.  </li>
 <li>You want to <code>return</code> multiple bits of information about something, e.g., its <code>len</code>, its value, and so on.  </li>
 </ul>
-<p>In fact, the <code>items()</code> function we learned for dictionaries returns a <code>list</code> of <code>tuple</code> objects.</p>
+<p>Multiple values can be separated with a <code>,</code>.</p>
 
 </div>
 </div>
@@ -14793,8 +14793,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Multiple-return-values:-an-example">Multiple <code>return</code> values: an example<a class="anchor-link" href="#Multiple-return-values:-an-example">&#182;</a></h3><p>Suppose we want a <code>function</code> that takes in a <code>dict</code> of <code>Names</code> and <code>Heights</code>. That is, each <em>key</em> is a <code>Name</code>, and it maps onto a <code>Height</code>.</p>
-<p>We want the function to return the <code>Name</code> of the person with the largest <code>Height</code>, <em>as well as</em> the <code>Height</code> itself.</p>
+<h3 id="Multiple-return-values:-an-example">Multiple <code>return</code> values: an example<a class="anchor-link" href="#Multiple-return-values:-an-example">&#182;</a></h3><p>Suppose we wanted a function that takes two numbers as input, and returns both:</p>
+<ul>
+<li>Their sum.  </li>
+<li>Their product.</li>
+</ul>
 
 </div>
 </div>
@@ -14804,41 +14807,11 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Can't just max...that'll return "Sean"</span>
-<span class="n">heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Sean'</span><span class="p">:</span> <span class="mi">67</span><span class="p">,</span> <span class="s1">'Ben'</span><span class="p">:</span> <span class="mi">72</span><span class="p">,</span> <span class="s1">'Anne'</span><span class="p">:</span> <span class="mi">66</span><span class="p">}</span>
-</pre></div>
-</body></html>
-
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_tallest</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
-    <span class="c1">## Get all tuples...</span>
-    <span class="c1">### turn into list so we can index into it</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
-    <span class="c1">## Start by assigning tallest to first in list</span>
-    <span class="n">tallest</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="c1">## Then iterate through tuples...</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-        <span class="c1">### if item is taller than initial</span>
-        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">tallest</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="c1">### Reset "tallest"</span>
-            <span class="n">tallest</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="k">return</span> <span class="n">tallest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 </body></html>
 
@@ -14853,10 +14826,10 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_tallest</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sum_product</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </body></html>
 
@@ -14876,13 +14849,13 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(&#39;Ben&#39;, 72)</pre>
+<pre>(210, 2000)</pre>
 </div>
 
 </div>
@@ -14891,6 +14864,77 @@ div.jp-OutputPrompt {
 
 </div>
 
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Check-in">Check-in<a class="anchor-link" href="#Check-in">&#182;</a></h3><p>What do you notice about the <code>type</code> of the object that gets returned when a function returns <em>multiple values</em>?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sum_product</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(7, 10)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="return-and-tuples"><code>return</code> and <code>tuple</code>s<a class="anchor-link" href="#return-and-tuples">&#182;</a></h3><p>By default, a <code>function</code> will package these multiple values into a <code>tuple</code>.</p>
+<ul>
+<li>It's possible to return them in another form, e.g., in a structured dictionary. </li>
+<li>But if you use the <code>return a, b</code> syntax, <code>a</code> and <code>b</code> will returned like: <code>(a, b)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15969,6 +16013,18 @@ test_var       int         2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>This is the end of our unit on functions––but we'll continue getting practice throughout the rest of the course!</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Practice-problems">Practice problems<a class="anchor-link" href="#Practice-problems">&#182;</a></h2><p>One of the best ways to learn a new concept is to actually practice it. Thus, I'm including a number of practice problems at the end of this lecture, which we'll work through.</p>
 
 </div>
@@ -16388,6 +16444,166 @@ test_var       int         2
 <pre>104
 </pre>
 </div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-4:-find-the-tallest-in-a-dictionary.">Problem 4: find the tallest in a dictionary.<a class="anchor-link" href="#Problem-4:-find-the-tallest-in-a-dictionary.">&#182;</a></h3><p>Suppose we want a <code>function</code> that takes in a <code>dict</code> of <code>Names</code> and <code>Heights</code>. That is, each <em>key</em> is a <code>Name</code>, and it maps onto a <code>Height</code>.</p>
+<p>We want the function to return the <code>Name</code> of the person with the largest <code>Height</code>, <em>as well as</em> the <code>Height</code> itself.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Can't just max...that'll return "Sean"</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Sean'</span><span class="p">:</span> <span class="mi">67</span><span class="p">,</span> <span class="s1">'Ben'</span><span class="p">:</span> <span class="mi">72</span><span class="p">,</span> <span class="s1">'Anne'</span><span class="p">:</span> <span class="mi">66</span><span class="p">}</span>
+<span class="c1">### Your code here</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_tallest</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
+    <span class="c1">## Get all tuples...</span>
+    <span class="c1">### turn into list so we can index into it</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+    <span class="c1">## Start by assigning tallest to first in list</span>
+    <span class="n">tallest</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1">## Then iterate through tuples...</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="c1">### if item is taller than initial</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">tallest</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1">### Reset "tallest"</span>
+            <span class="n">tallest</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">tallest</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_tallest</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;Ben&#39;, 72)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_tallest</span><span class="p">({</span><span class="s1">'A'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="mi">200</span><span class="p">})</span>
+</pre></div>
+</body></html>
+
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;C&#39;, 200)</pre>
+</div>
+
 </div>
 
 </div>
